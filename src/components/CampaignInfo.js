@@ -33,7 +33,7 @@ export const CampaignInfo = ({ contractAddress }) => {
 
     loadCampaignData();
   }, [contractAddress]);
-
+//hello
   return (
     <div className="info-container">
       <h2>Campaign Info</h2>
