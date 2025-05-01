@@ -84,3 +84,22 @@ app.post('/contribute', (req, res) => {
 app.listen(port, () => {
   console.log(`Backend server running at http://localhost:${port}`);
 });
+// Mock Aadhaar OTP send
+app.post('/mock/send-otp', (req, res) => {
+  const { aadhaarNumber } = req.body;
+  if (!aadhaarNumber || aadhaarNumber.length !== 12) {
+    return res.status(400).json({ message: 'Invalid Aadhaar number' });
+  }
+  // Simulate OTP send
+  return res.json({ message: 'OTP sent to your registered mobile (simulated)' });
+});
+
+// Mock OTP verify
+app.post('/mock/verify-otp', (req, res) => {
+  const { otp } = req.body;
+  if (otp === '123456') {
+    return res.json({ message: 'Aadhaar verified successfully (simulated)' });
+  }
+  return res.status(400).json({ message: 'Invalid OTP' });
+});
+

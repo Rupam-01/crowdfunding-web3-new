@@ -9,7 +9,8 @@ import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Home } from './pages/Home';
 import Verify from './pages/verify'; 
-import AadharVerification from './components/AadharVerification';
+import AadharVerification from './pages/AadharVerification';
+
 
 import './styles/App.css';
 
@@ -53,7 +54,7 @@ function App() {
         <Route path="/dashboard" element={isLoggedIn ? <Dashboard account={account} setAccount={setAccount} /> : <Navigate to="/login" />} />
         <Route path="/create-campaign" element={<CreateCampaign />} />
         <Route path="/verify" element={<Verify />} />
-        <Route path="/verify-aadhaar" element={<AadharVerification />} />
+        <Route path="/verify" element={<AadharVerification />} />
       </Routes>
     </Router>
   );

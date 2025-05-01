@@ -1,0 +1,26 @@
+.aadhaar-container {
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    text-align: center;
+  }
+  
+  .aadhaar-container input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+  }
+  
+  .aadhaar-container button {
+    padding: 10px;
+    width: 100%;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-bottom: 10px;
+  }
+  

@@ -10,7 +10,7 @@ const PORT = 5000;
 app.use(cors());
 app.use(express.json());
 
-mongoose.connect('mongodb://localhost:27017/crowdfund', {
+mongoose.connect('mongodb://localhost:27017/crowdfunding', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 })
@@ -57,3 +57,23 @@ app.post('/api/login', async (req, res) => {
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
+// Mock Aadhaar OTP send
+app.post('/mock/send-otp', (req, res) => {
+  const { aadhaarNumber } = req.body;
+  if (!aadhaarNumber || aadhaarNumber.length !== 12) {
+    return res.status(400).json({ message: 'Invalid Aadhaar number' });
+  }
+  // Simulate OTP send
+  return res.json({ message: 'OTP sent to your registered mobile (simulated)' });
+});
+
+// Mock OTP verify
+app.post('/mock/verify-otp', (req, res) => {
+  const { otp } = req.body;
+  if (otp === '123456') {
+    return res.json({ message: 'Aadhaar verified successfully (simulated)' });
+  }
+  return res.status(400).json({ message: 'Invalid OTP' });
+});
+
