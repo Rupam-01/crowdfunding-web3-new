@@ -1,0 +1,14 @@
+.info-container {
+    max-width: 600px;
+    margin: 30px auto;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .info-container p {
+    font-size: 18px;
+    margin: 10px 0;
+  }
+  
